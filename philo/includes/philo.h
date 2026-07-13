@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enmanueliglesiasgarciadelcastillo <enma    +#+  +:+       +#+        */
+/*   By: jrubio-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 20:31:40 by enmanueligl       #+#    #+#             */
-/*   Updated: 2026/06/02 20:54:49 by enmanueligl      ###   ########.fr       */
+/*   Updated: 2026/07/13 19:36:16 by jrubio-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
-# include "ft_printf2.0/ft_printf.h"
 
 
 typedef struct s_philo
