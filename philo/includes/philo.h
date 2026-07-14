@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eiglesia <eiglesia@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enmanueliglesiasgarciadelcastillo <enma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 20:31:40 by enmanueligl       #+#    #+#             */
-/*   Updated: 2026/07/13 21:07:56 by eiglesia         ###   ########.fr       */
+/*   Updated: 2026/07/14 13:33:04 by enmanueligl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ typedef struct s_philo
 	pthread_t		thread;
 	pthread_mutex_t	r_fork;
 	pthread_mutex_t	*l_fork;
+	long long		last_meal;
+	int				hungry;
+	int				meals;
+	int				last_turn;
 }	t_philo;
 
 typedef struct s_data
@@ -36,14 +40,20 @@ typedef struct s_data
 	int				time_to_sleep;
 	int				num_meals;
 	int				num_philos;
+	int				greaper;
+	pthread_mutex_t	dead;
+	pthread_mutex_t	print;
 }	t_data;
 
-void	print_action(t_philo *philo, char *action);
-void	*day(void *arg);
-int		parseo(int argc, char **argv);
-
-// utils
-
-int		ft_atoi(const char *nptr);
+int			print_action(t_philo *philo, char *action);
+void		*day(void *arg);
+int			parseo(int argc, char **argv);
+long long	get_time_ms(void);
+int			ft_atoi(const char *nptr);
+int			ft_msleep(t_philo *philo, int time);
+int			get_turn(t_philo *philo);
+int			one_philo(t_philo *philo);
+int			same_turn(t_philo *philo, int turn);
+int			should_eat(t_philo *philo, int turn);
 
 #endif

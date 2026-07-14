@@ -15,7 +15,7 @@ NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 
-SRC = src/main.c src/day.c src/parseo.c src/utils.c
+SRC = src/main.c src/day.c src/parseo.c src/utils.c src/turn.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
@@ -35,4 +35,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
