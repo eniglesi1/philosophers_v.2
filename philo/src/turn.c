@@ -6,7 +6,7 @@
 /*   By: enmanueliglesiasgarciadelcastillo <enma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/14 15:35:00 by enmanueligl       #+#    #+#             */
-/*   Updated: 2026/07/14 16:20:48 by enmanueligl      ###   ########.fr       */
+/*   Updated: 2026/07/14 16:38:28 by enmanueligl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ int	should_eat(t_philo *philo, int turn)
 {
 	if (philo->data->num_philos % 2 == 0)
 		return (turn % 2 == philo->id % 2);
-	return (((turn + philo->data->num_philos) - (2 + philo->id)) % philo->data->num_philos != 0);
+	return (((turn + (philo->data->num_philos * 2)) - (2 + philo->id))
+		% philo->data->num_philos != 0);
 }

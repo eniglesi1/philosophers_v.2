@@ -26,7 +26,7 @@ t_philo	*get_philo(t_data *data)
 		philos[i].id = i + 1;
 		philos[i].data = data;
 		philos[i].last_meal = data->born_time;
-		philos[i].hungry = philos[i].id % 2;
+		philos[i].hungry = philos[i].id % 2 && i != data->num_philos - 1;
 		philos[i].meals = 0;
 		philos[i].last_turn = 0;
 		if (pthread_mutex_init(&philos[i].r_fork, NULL) != 0)

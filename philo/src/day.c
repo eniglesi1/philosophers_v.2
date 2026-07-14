@@ -6,7 +6,7 @@
 /*   By: enmanueliglesiasgarciadelcastillo <enma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 20:31:50 by enmanueligl       #+#    #+#             */
-/*   Updated: 2026/07/14 15:26:24 by enmanueligl      ###   ########.fr       */
+/*   Updated: 2026/07/14 16:27:54 by enmanueligl      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static int	eat_turn(t_philo *philo)
 		return (1);
 	if (ft_msleep(philo, philo->data->time_to_sleep))
 		return (1);
-	return (print_action(philo, " is thinking"));
+	return (print_action(philo, " is thinking"), 0);
 }
 
 static int	do_turn(t_philo *philo, int turn)
